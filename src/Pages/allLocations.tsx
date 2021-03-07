@@ -8,6 +8,7 @@ const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [currentModalData, setCurrentModalData] = useState({});
+  const [modalsViewCount, setModalsViewCount] = useState<number[]>([]);
 
   useEffect(() => {
     getAllLocations()
@@ -17,9 +18,24 @@ const AllLocations: React.FC = () => {
       .catch((e: any) => alert(`Error fetching locations data - ${e.message}`));
   }, []);
 
+  const addModalsViewCount = (location: locationProps) => {
+    if (!modalsViewCount[location.id]) {
+      setModalsViewCount((modalsViewCount) => [
+        ...modalsViewCount,
+        (modalsViewCount[location.id] = 1),
+      ]);
+    } else {
+      setModalsViewCount((modalsViewCount) => [
+        ...modalsViewCount,
+        (modalsViewCount[location.id] = modalsViewCount[location.id] + 1),
+      ]);
+    }
+  };
+
   const openModal = (location: locationProps) => {
     setIsModalOpen(true);
     setCurrentModalData(location);
+    addModalsViewCount(location);
   };
 
   return (
@@ -42,7 +58,8 @@ const AllLocations: React.FC = () => {
                     {location.createdAt}
                   </li>
                   <li>
-                    <span>icon 3</span>Views
+                    <span>icon 3</span>
+                    {modalsViewCount[location.id] ? modalsViewCount[location.id] : 0}
                   </li>
                 </ul>
               </div>
