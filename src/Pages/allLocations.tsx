@@ -3,9 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { getAllLocations } from '../Api/allLocationsApi';
 import { locationProps } from '../models/location.model';
 import LocationsModal from '../Components/locationsModal/locationsModal';
-import TimeZoneIcon from '../Assets/Timezone.svg';
-import UsersIcon from '../Assets/Users.svg';
-import ViewsIcon from '../Assets/Views.svg';
+import LocationsCard from '../Components/locationsCard/locationsCard';
 
 const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
@@ -45,25 +43,12 @@ const AllLocations: React.FC = () => {
         <h1>Acme locations</h1>
         <ul>
           {locationsData.map((location: any) => (
-            <li key={location.id} onClick={() => openModal(location)}>
-              <div>
-                <ul>
-                  <li>{location.name}</li>
-                  <li>
-                    <img src={UsersIcon} />
-                    {location.userCount}
-                  </li>
-                  <li>
-                    <img src={TimeZoneIcon} />
-                    {location.createdAt}
-                  </li>
-                  <li>
-                    <img src={ViewsIcon} />
-                    {modalsViewCount[location.id] ? modalsViewCount[location.id] : 0}
-                  </li>
-                </ul>
-              </div>
-            </li>
+            <LocationsCard
+              key={location.id}
+              location={location}
+              openModal={openModal}
+              viewCount={modalsViewCount[location.id] ? modalsViewCount[location.id] : 0}
+            />
           ))}
         </ul>
       </section>

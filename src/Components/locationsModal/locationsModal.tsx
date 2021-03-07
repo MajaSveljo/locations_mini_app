@@ -13,7 +13,7 @@ interface locationModalProps {
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LocationsModal: React.FC | any = ({
+const LocationsModal: locationModalProps | any = ({
   isOpen,
   location,
   onClose,
