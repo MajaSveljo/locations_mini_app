@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { getAllLocations } from '../Api/allLocationsApi';
 import { locationProps } from '../models/location.model';
 import LocationsModal from '../Components/locationsModal/locationsModal';
+import TimeZoneIcon from '../Assets/Timezone.svg';
+import UsersIcon from '../Assets/Users.svg';
+import ViewsIcon from '../Assets/Views.svg';
 
 const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
@@ -50,15 +53,15 @@ const AllLocations: React.FC = () => {
                 <ul>
                   <li>{location.name}</li>
                   <li>
-                    <span>icon 1</span>
+                    <img src={UsersIcon} />
                     {location.userCount}
                   </li>
                   <li>
-                    <span>icon 2</span>
+                    <img src={TimeZoneIcon} />
                     {location.createdAt}
                   </li>
                   <li>
-                    <span>icon 3</span>
+                    <img src={ViewsIcon} />
                     {modalsViewCount[location.id] ? modalsViewCount[location.id] : 0}
                   </li>
                 </ul>

@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import { locationProps } from '../../models/location.model';
+import CloseIcon from '../../Assets/Close.svg';
+import TimeZoneIcon from '../../Assets/Timezone.svg';
+import UsersIcon from '../../Assets/Users.svg';
+import ViewsIcon from '../../Assets/Views.svg';
 
 interface locationModalProps {
   isOpen: boolean;
@@ -28,20 +32,20 @@ const LocationsModal: React.FC | any = ({ isOpen, location, onClose }: locationM
             onClose();
           }}
         >
-          Close
+          <img src={CloseIcon} />
         </button>
       </div>
       <ul>
         <li>
-          <span>icon 1</span>
+          <img src={UsersIcon} />
           {location.userCount}
         </li>
         <li>
-          <span>icon 2</span>
+          <img src={TimeZoneIcon} />
           {location.createdAt}
         </li>
         <li>
-          <span>icon 3</span>Views
+          <img src={ViewsIcon} />
         </li>
       </ul>
       <section>
