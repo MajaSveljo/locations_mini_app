@@ -5,6 +5,8 @@ import { locationProps } from '../models/location.model';
 import LocationsModal from '../Components/locationsModal/locationsModal';
 import LocationsCard from '../Components/locationsCard/locationsCard';
 
+import Header from '../Components/header/header';
+
 const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -38,7 +40,7 @@ const AllLocations: React.FC = () => {
 
   return (
     <>
-      <header>All locations</header>
+      <Header>All locations</Header>
       <section>
         <h1>Acme locations</h1>
         <ul>
