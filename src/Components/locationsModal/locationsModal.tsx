@@ -9,10 +9,16 @@ interface locationModalProps {
   isOpen: boolean;
   location: locationProps;
   onClose: () => void;
+  viewCount: number;
 }
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const LocationsModal: React.FC | any = ({ isOpen, location, onClose }: locationModalProps) => {
+const LocationsModal: React.FC | any = ({
+  isOpen,
+  location,
+  onClose,
+  viewCount,
+}: locationModalProps) => {
   const [isModalOpen, setIsModalOpen] = useState(isOpen);
 
   useEffect(() => {
@@ -46,6 +52,7 @@ const LocationsModal: React.FC | any = ({ isOpen, location, onClose }: locationM
         </li>
         <li>
           <img src={ViewsIcon} />
+          {viewCount}
         </li>
       </ul>
       <section>

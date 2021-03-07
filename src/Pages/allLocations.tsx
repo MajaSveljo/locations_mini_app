@@ -10,7 +10,7 @@ import ViewsIcon from '../Assets/Views.svg';
 const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [currentModalData, setCurrentModalData] = useState({});
+  const [currentModalData, setCurrentModalData] = useState<locationProps | null>(null);
   const [modalsViewCount, setModalsViewCount] = useState<number[]>([]);
 
   useEffect(() => {
@@ -76,6 +76,7 @@ const AllLocations: React.FC = () => {
         onClose={() => {
           setIsModalOpen(false);
         }}
+        viewCount={currentModalData ? modalsViewCount[currentModalData.id] : 0}
       />
     </>
   );
