@@ -22,16 +22,13 @@ const AllLocations: React.FC = () => {
   }, []);
 
   const addModalsViewCount = (location: locationProps) => {
+    const modalsViewCountData = modalsViewCount;
     if (!modalsViewCount[location.id]) {
-      setModalsViewCount((modalsViewCount) => [
-        ...modalsViewCount,
-        (modalsViewCount[location.id] = 1),
-      ]);
+      modalsViewCountData[location.id] = 1;
+      setModalsViewCount(modalsViewCountData);
     } else {
-      setModalsViewCount((modalsViewCount) => [
-        ...modalsViewCount,
-        (modalsViewCount[location.id] = modalsViewCount[location.id] + 1),
-      ]);
+      modalsViewCountData[location.id] = modalsViewCountData[location.id] + 1;
+      setModalsViewCount(modalsViewCountData);
     }
   };
 
