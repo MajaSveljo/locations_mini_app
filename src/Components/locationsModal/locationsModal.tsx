@@ -43,7 +43,11 @@ const LocationsModal: locationModalProps | any = ({
   }, [isOpen]);
 
   return isModalOpen ? (
-    <ModalBackground>
+    <ModalBackground
+      onClick={() => {
+        onClose();
+      }}
+    >
       <ModalContainer>
         <ModalHeaderContainer>
           <ModalHeaderText>{location.name}</ModalHeaderText>
