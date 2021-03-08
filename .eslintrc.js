@@ -20,5 +20,11 @@ module.exports = {
   plugins: ['react', '@typescript-eslint'],
   rules: {
     'no-console': ['error', { allow: ['warn', 'error'] }],
+    'prettier/prettier': [
+      'error',
+      {
+        endOfLine: 'auto',
+      },
+    ],
   },
 };
