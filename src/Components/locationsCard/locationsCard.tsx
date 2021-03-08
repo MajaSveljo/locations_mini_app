@@ -4,6 +4,14 @@ import TimeZoneIcon from '../../Assets/Timezone.svg';
 import UsersIcon from '../../Assets/Users.svg';
 import ViewsIcon from '../../Assets/Views.svg';
 
+import {
+  LocationsCardContainer,
+  LocationsCardListContainer,
+  LocationsCardHeading,
+  LocationsCardListItem,
+  LocationsCardListItemText,
+} from './locationsCard.styles';
+
 interface locationModalProps {
   location: locationProps;
   openModal: (location: locationProps) => void;
@@ -16,23 +24,23 @@ const LocationsCard: React.FC<locationModalProps> = ({
   viewCount,
 }: locationModalProps) => {
   return (
-    <li onClick={() => openModal(location)}>
-      <ul>
-        <li>{location.name}</li>
-        <li>
+    <LocationsCardContainer onClick={() => openModal(location)}>
+      <LocationsCardListContainer>
+        <LocationsCardHeading>{location.name}</LocationsCardHeading>
+        <LocationsCardListItem>
           <img src={UsersIcon} />
-          {location.userCount}
-        </li>
-        <li>
+          <LocationsCardListItemText>{location.userCount}</LocationsCardListItemText>
+        </LocationsCardListItem>
+        <LocationsCardListItem>
           <img src={TimeZoneIcon} />
-          {location.createdAt}
-        </li>
-        <li>
+          <LocationsCardListItemText>{location.createdAt}</LocationsCardListItemText>
+        </LocationsCardListItem>
+        <LocationsCardListItem>
           <img src={ViewsIcon} />
-          {viewCount}
-        </li>
-      </ul>
-    </li>
+          <LocationsCardListItemText>{viewCount}</LocationsCardListItemText>
+        </LocationsCardListItem>
+      </LocationsCardListContainer>
+    </LocationsCardContainer>
   );
 };
 

@@ -5,7 +5,13 @@ import { locationProps } from '../models/location.model';
 import LocationsModal from '../Components/locationsModal/locationsModal';
 import LocationsCard from '../Components/locationsCard/locationsCard';
 
+import {
+  AllLocationsHeadersContainer,
+  AllLocationsSection,
+  AllLocationsContainer,
+} from './allLocations.style';
 import Header from '../Components/header/header';
+import H1 from '../Components/h1/h1';
 
 const AllLocations: React.FC = () => {
   const [locationsData, setLocationsData] = useState([]);
@@ -40,10 +46,12 @@ const AllLocations: React.FC = () => {
 
   return (
     <>
-      <Header>All locations</Header>
-      <section>
-        <h1>Acme locations</h1>
-        <ul>
+      <AllLocationsHeadersContainer>
+        <Header>All locations</Header>
+        <H1>Acme locations</H1>
+      </AllLocationsHeadersContainer>
+      <AllLocationsSection>
+        <AllLocationsContainer>
           {locationsData.map((location: any) => (
             <LocationsCard
               key={location.id}
@@ -52,8 +60,8 @@ const AllLocations: React.FC = () => {
               viewCount={modalsViewCount[location.id] ? modalsViewCount[location.id] : 0}
             />
           ))}
-        </ul>
-      </section>
+        </AllLocationsContainer>
+      </AllLocationsSection>
       <LocationsModal
         isOpen={isModalOpen}
         location={currentModalData}
