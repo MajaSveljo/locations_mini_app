@@ -32,6 +32,7 @@ export const ModalHeaderContainer = styled.aside`
 export const ModalHeaderText = styled.aside`
   font-size: 16px;
   font-weight: ${(props) => props.theme.fontWeightSemiBold};
+  font-family: 'Lato';
 `;
 
 export const ModalHeaderClose = styled.button`
@@ -50,6 +51,7 @@ export const ModalListItem = styled.li`
   margin: 15px 0;
   ${verticalCenter};
   font-size: 14px;
+  font-family: 'Lato';
 `;
 
 export const ModalListItemText = styled.span`
@@ -59,11 +61,13 @@ export const ModalListItemText = styled.span`
 export const ModalDescriptionHeading = styled.header`
   font-weight: ${(props) => props.theme.fontWeightSemiBold};
   font-size: 14px;
+  font-family: 'Lato';
   margin-bottom: 5px;
 `;
 
 export const ModalDescriptionText = styled.header`
   font-weight: ${(props) => props.theme.fontWeightLight};
   font-size: 14px;
+  font-family: 'Lato';
   line-height: 20px;
 `;

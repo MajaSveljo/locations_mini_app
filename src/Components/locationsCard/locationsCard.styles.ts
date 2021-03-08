@@ -19,6 +19,7 @@ export const LocationsCardContainer = styled.li`
 
 export const LocationsCardHeading = styled.li`
   font-weight: ${(props) => props.theme.fontWeightBold};
+  font-family: 'Lato';
   font-size: 18px;
   opacity: 80%;
   padding: 5px 0 10px;
@@ -34,6 +35,7 @@ export const LocationsCardListItem = styled.li`
   display: flex;
   align-items: center;
   margin-bottom: 5px;
+  font-family: 'Lato';
 `;
 
 export const LocationsCardListItemText = styled.span`
