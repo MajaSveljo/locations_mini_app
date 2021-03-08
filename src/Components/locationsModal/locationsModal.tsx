@@ -5,6 +5,19 @@ import TimeZoneIcon from '../../Assets/Timezone.svg';
 import UsersIcon from '../../Assets/Users.svg';
 import ViewsIcon from '../../Assets/Views.svg';
 
+import {
+  ModalBackground,
+  ModalContainer,
+  ModalHeaderContainer,
+  ModalHeaderText,
+  ModalHeaderClose,
+  ModalListContainer,
+  ModalListItem,
+  ModalListItemText,
+  ModalDescriptionHeading,
+  ModalDescriptionText,
+} from './locationsModal.styles';
+
 interface locationModalProps {
   isOpen: boolean;
   location: locationProps;
@@ -30,36 +43,38 @@ const LocationsModal: locationModalProps | any = ({
   }, [isOpen]);
 
   return isModalOpen ? (
-    <aside>
-      <div>
-        <header>{location.name}</header>
-        <button
-          onClick={() => {
-            onClose();
-          }}
-        >
-          <img src={CloseIcon} />
-        </button>
-      </div>
-      <ul>
-        <li>
-          <img src={UsersIcon} />
-          {location.userCount}
-        </li>
-        <li>
-          <img src={TimeZoneIcon} />
-          {location.createdAt}
-        </li>
-        <li>
-          <img src={ViewsIcon} />
-          {viewCount}
-        </li>
-      </ul>
-      <section>
-        <header>Description</header>
-        <p>{location.description}</p>
-      </section>
-    </aside>
+    <ModalBackground>
+      <ModalContainer>
+        <ModalHeaderContainer>
+          <ModalHeaderText>{location.name}</ModalHeaderText>
+          <ModalHeaderClose
+            onClick={() => {
+              onClose();
+            }}
+          >
+            <img src={CloseIcon} />
+          </ModalHeaderClose>
+        </ModalHeaderContainer>
+        <ModalListContainer>
+          <ModalListItem>
+            <img src={UsersIcon} />
+            <ModalListItemText>{location.userCount}</ModalListItemText>
+          </ModalListItem>
+          <ModalListItem>
+            <img src={TimeZoneIcon} />
+            <ModalListItemText>{location.createdAt}</ModalListItemText>
+          </ModalListItem>
+          <ModalListItem>
+            <img src={ViewsIcon} />
+            <ModalListItemText>{viewCount}</ModalListItemText>
+          </ModalListItem>
+        </ModalListContainer>
+        <section>
+          <ModalDescriptionHeading>Description</ModalDescriptionHeading>
+          <ModalDescriptionText>{location.description}</ModalDescriptionText>
+        </section>
+      </ModalContainer>
+    </ModalBackground>
   ) : null;
 };
 

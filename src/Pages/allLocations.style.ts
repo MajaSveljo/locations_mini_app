@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const AllLocationsPage = styled.div`
+  position: relative;
+`;
+
 export const AllLocationsContainer = styled.ul`
   display: flex;
   flex-wrap: wrap;

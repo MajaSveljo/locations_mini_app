@@ -6,6 +6,7 @@ import AllLocations from './Pages/allLocations';
 const theme = {
   fontWeightBold: 700,
   fontWeightSemiBold: 600,
+  fontWeightLight: 400,
   lightGreyColor: '#001122',
 };
 

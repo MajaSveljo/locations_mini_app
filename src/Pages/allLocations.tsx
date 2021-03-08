@@ -6,6 +6,7 @@ import LocationsModal from '../Components/locationsModal/locationsModal';
 import LocationsCard from '../Components/locationsCard/locationsCard';
 
 import {
+  AllLocationsPage,
   AllLocationsHeadersContainer,
   AllLocationsSection,
   AllLocationsContainer,
@@ -45,7 +46,7 @@ const AllLocations: React.FC = () => {
   };
 
   return (
-    <>
+    <AllLocationsPage>
       <AllLocationsHeadersContainer>
         <Header>All locations</Header>
         <H1>Acme locations</H1>
@@ -70,7 +71,7 @@ const AllLocations: React.FC = () => {
         }}
         viewCount={currentModalData ? modalsViewCount[currentModalData.id] : 0}
       />
-    </>
+    </AllLocationsPage>
   );
 };
 
