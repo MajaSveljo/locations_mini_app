@@ -1,11 +1,12 @@
 import styled from 'styled-components';
+import { lightGreyColorOpacity } from '../../Assets/mixins';
 
 export const EditButtonContainer = styled.span`
   display: none;
 `;
 
 export const LocationsCardContainer = styled.li`
-  border: 1px solid rgba(0, 17, 34, 0.1);
+  border: 1px solid ${lightGreyColorOpacity(0.1)};
   background-color: rgba(246, 246, 246, 0.2);
   font-size: 16px;
   padding: 15px 25px;

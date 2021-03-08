@@ -1,4 +1,5 @@
 import styled, { css } from 'styled-components';
+import { lightGreyColorOpacity } from '../../Assets/mixins';
 
 const verticalCenter = css`
   display: flex;
@@ -11,7 +12,7 @@ export const ModalBackground = styled.aside`
   left: 0;
   bottom: 0;
   right: 0;
-  background-color: rgba(0, 17, 34, 0.8);
+  background-color: ${lightGreyColorOpacity(0.8)};
   ${verticalCenter};
   justify-content: center;
 `;
