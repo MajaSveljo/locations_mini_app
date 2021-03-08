@@ -1,5 +1,9 @@
 import styled from 'styled-components';
 
+export const EditButtonContainer = styled.span`
+  display: none;
+`;
+
 export const LocationsCardContainer = styled.li`
   border: 1px solid rgba(0, 17, 34, 0.1);
   background-color: rgba(246, 246, 246, 0.2);
@@ -7,6 +11,10 @@ export const LocationsCardContainer = styled.li`
   padding: 15px 25px;
   flex: 1 0 18%;
   margin: 0 12px 25px;
+
+  &:hover ${EditButtonContainer} {
+    display: block;
+  }
 `;
 
 export const LocationsCardHeading = styled.li`
@@ -14,6 +22,8 @@ export const LocationsCardHeading = styled.li`
   font-size: 18px;
   opacity: 80%;
   padding: 5px 0 10px;
+  display: flex;
+  justify-content: space-between;
 `;
 
 export const LocationsCardListContainer = styled.ul`
