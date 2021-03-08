@@ -10,7 +10,7 @@ export const LocationsCardContainer = styled.li`
   background-color: rgba(246, 246, 246, 0.2);
   font-size: 16px;
   padding: 15px 25px;
-  flex: 1 0 18%;
+  flex: 0 0 18%;
   margin: 0 12px 25px;
 
   &:hover ${EditButtonContainer} {
